@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package common;
+
+message Empty {}
+
+message HealthStatus {
+  string status = 1;
+}
+
+service Health {
+   rpc GetHealth(Empty) returns (HealthStatus) {}
+}
