@@ -3,4 +3,6 @@ import { healthCheck } from "./handlers";
 
 export const router = new Router();
 
-router.get("/", healthCheck);
+router.get("/", (_req, res) => {
+  res.json(healthCheck());
+});

@@ -30,7 +30,9 @@ function onClientReady() {
       if (error) {
         console.error(error.message);
       } else if (response) {
-        console.log(`(client) Got server message: ${response.status}`);
+        console.log(
+          `(client) Got server message: ${JSON.stringify(response, null, 2)}`
+        );
       }
     }
   );

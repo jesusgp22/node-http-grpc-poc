@@ -3,15 +3,10 @@ import * as protoLoader from "@grpc/proto-loader";
 
 import { ProtoGrpcType } from "./proto/health";
 import { HealthHandlers } from "./proto/common/Health";
-
-const checkHealt = () => {
-  return {
-    status: "ok",
-  };
-};
+import { healthCheck } from "../handlers";
 
 const getHealth = (_call, callback) => {
-  callback(null, checkHealt());
+  callback(null, healthCheck());
 };
 
 const handlers: HealthHandlers = {
